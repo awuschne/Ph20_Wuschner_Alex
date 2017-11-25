@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{minted}
+\graphicspath{ {Pictures/} }
+
+\begin{document}
+\title{Ph 20: Problem Set 4}
+\author{Alex Wuschner}
+\maketitle
+Part 1:\newline
+A repository was made on github, and the Ph 20 Problem Set 3 was imported into the repository and committed. Changes were then made in the form of a couple additional comments to explain some of the processes used, and the revisions were then committed. The repository is located in the following link: $https://github.com/awuschne/Ph20\_Wuschner\_Alex$.  The version control log is located here: $https://github.com/awuschne/Ph20\_Wuschner\_Alex/commits/master$.\newline
+
+Part 2: \newline
+In this section of the assignment, a makefile was created to generate all of the plots produced in the 20.3 assignment using the "make" command.  The assignment used (20.3) was slightly adapted from the python notebook it was originally written in, made into a .py file, and then used as a dependency of the .png files of the plots that were generated.  The code used/run by the makefile is given here:\newline
+\inputminted{python}{Pset3_py.py}
+Using this code, the same plots can be produced as in last week's problem set.  Some examples include:\newline
+\includegraphics[scale=0.8]{1.png}\newline
+\includegraphics[scale=0.8]{2.png}\newline
+\includegraphics[scale=0.8]{3.png}\newline
+Finally, the code for the makefile, (also put in the repository listed above) is given here:
+\begin{lstlisting}
+.PHONY : pngs
+pngs: Pset3_py.py 1.png 2.png 3.png 4.png 5.png 6.png 7.png 8.pngs 9.png 10.png 11.png 12.png 13.png
+
+1.png : Pset3_py.py
+	python $^ $@
+2.png : Pset3_py.py
+	python $^ $@
+3.png : Pset3_py.py
+	python $^ $@
+4.png : Pset3_py.py
+	python $^ $@
+5.png : Pset3_py.py
+	python $^ $@
+6.png : Pset3_py.py
+	python $^ $@
+7.png : Pset3_py.py
+	python $^ $@
+8.png : Pset3_py.py
+	python $^ $@
+9.png : Pset3_py.py
+	python $^ $@
+10.png : Pset3_py.py
+	python $^ $@
+11.png : Pset3_py.py
+	python $^ $@
+12.png : Pset3_py.py
+	python $^ $@
+
+13.png : Pset3_py.py
+	python $^ $@
+
+.PHONY : clean
+clean:
+	rm -f *.png
+\end{lstlisting}
+
+\end{document}
