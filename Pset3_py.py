@@ -5,6 +5,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 import math
 
 
@@ -58,13 +59,13 @@ explicit_v = v_values
 
 # Problem 1:
 plot_data(times, x_values, "X(t)", "Time", "X")
-savefig('1.png')
+plt.savefig('1.png')
 
 # In[250]:
 
 # Problem 1:
 plot_data(times, v_values, "V(t)", "Time", "V")
-savefig('2.png')
+plt.savefig('2.png')
 
 # In[251]:
 
@@ -85,13 +86,13 @@ global_errors_v = real_v - v_values
 
 # Problem 2:
 plot_data(times, global_errors_x, "Global Position Errors Over Time", "Time", "Global Error")
-savefig('3.png')
+plt.savefig('3.png')
 
 # In[253]:
 
 # Problem 2:
 plot_data(times, global_errors_v, "Global Velocity Errors Over Time", "Time", "Global Error")
-savefig('4.png')
+plt.savefig('4.png')
 
 # In[254]:
 
@@ -125,7 +126,7 @@ for value in h_values:
 
 # Problem 3:
 plot_data(h_values, max_truncation_error, "Max Error vs. h", "h", "Max Truncation Error")
-savefig('5.png')
+plt.savefig('5.png')
 
 # In[256]:
 
@@ -146,7 +147,7 @@ for time in times[:-1]:
     curr_index += 1
 energy_values = x_values**2 + v_values**2
 plot_data(times, energy_values, "Normalized Total Energy", "Time","Energy")
-savefig('6.png')
+plt.savefig('6.png')
 
 # In[257]:
 
@@ -192,20 +193,20 @@ implicit_v = v_values
 
 # Problem 5:
 plot_data(times, global_errors_x, "Global Position Errors Over Time", "Time", "Global Error")
-savefig('7.png')
+plt.savefig('7.png')
 
 # In[260]:
 
 # Problem 5:
 plot_data(times, global_errors_v, "Global Velocity Errors Over Time", "Time", "Global Error")
-savefig('8.png')
+plt.savefig('8.png')
 
 # In[261]:
 
 # Problem 5:
 energy_values = x_values**2 + v_values**2
 plot_data(times, energy_values, "Normalized Total Energy", "Time","Energy")
-savefig('9.png')
+plt.savefig('9.png')
 
 # In[271]:
 
@@ -243,7 +244,7 @@ plt.xlabel("X(t)")
 plt.ylabel("V(t)")
 plt.plot(real_x, real_v)
 plt.show()
-savefig('10.png')
+plt.savefig('10.png')
 
 # In[273]:
 
@@ -254,7 +255,7 @@ plt.xlabel("X(t)")
 plt.ylabel("V(t)")
 plt.plot(real_x, real_v)
 plt.show()
-savefig('11.png')
+plt.savefig('11.png')
 
 # In[265]:
 
@@ -291,14 +292,14 @@ plt.plot(real_x, real_v, label="Analytical Solution")
 plt.legend(loc=8,bbox_to_anchor=(1.3, 0.5))
 plt.axis('equal')
 plt.show()
-savefig('12.png')
+plt.savefig('12.png')
 
 # In[275]:
 
 # Problem 3:
 energy_values = symplectic_x**2 + symplectic_v**2
 plot_data(times, energy_values, "Normalized Total Energy", "Time","Energy")
-savefig('13.png')
+plt.savefig('13.png')
 
 # In[ ]:
 
